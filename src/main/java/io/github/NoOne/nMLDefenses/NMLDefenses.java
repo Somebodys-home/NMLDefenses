@@ -5,10 +5,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class NMLDefenses extends JavaPlugin {
     private static NMLDefenses nmlDefenses;
     private DefenseLore defenseLore;
+    private DefenseManager defenseManager;
 
     @Override
     public void onEnable() {
         nmlDefenses = this;
+        defenseLore = new DefenseLore();
+        defenseManager = new DefenseManager();
     }
 
     public static NMLDefenses getInstance() {
@@ -17,5 +20,9 @@ public final class NMLDefenses extends JavaPlugin {
 
     public DefenseLore getDefenseLore() {
         return defenseLore;
+    }
+
+    public DefenseManager getDefenseManager() {
+        return defenseManager;
     }
 }
