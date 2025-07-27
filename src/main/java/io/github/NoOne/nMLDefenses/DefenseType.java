@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 public enum DefenseType {
     EVASION,
     DEFENSE,
+    OVERHEALTH,
     PHYSICALRESIST,
     FIRERESIST,
     COLDRESIST,
@@ -21,6 +22,9 @@ public enum DefenseType {
             }
             case DEFENSE -> {
                 return "Defense";
+            }
+            case OVERHEALTH -> {
+                return "Overhealth";
             }
             case PHYSICALRESIST -> {
                 return "Physical Resist";
@@ -56,6 +60,7 @@ public enum DefenseType {
         switch (type) {
             case EVASION, LIGHTRESIST -> color = ChatColor.WHITE;
             case DEFENSE -> color = ChatColor.GREEN;
+            case OVERHEALTH -> color = ChatColor.DARK_BLUE;
             case PHYSICALRESIST -> color = ChatColor.DARK_RED;
             case FIRERESIST -> color = ChatColor.RED;
             case COLDRESIST -> color = ChatColor.AQUA;
