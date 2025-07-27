@@ -8,17 +8,17 @@ import org.bukkit.persistence.PersistentDataType;
 import java.util.HashMap;
 
 public class DefenseManager {
-    private final NMLDefenses plugin;
+    private static NMLDefenses plugin = null;
 
     public DefenseManager() {
-        this.plugin = NMLDefenses.getInstance();
+        plugin = NMLDefenses.getInstance();
     }
 
-    private NamespacedKey getKeyFor(DefenseType type) {
+    private static NamespacedKey getKeyFor(DefenseType type) {
         return new NamespacedKey(plugin, DefenseType.getDefenseString(type));
     }
 
-    public void setDefense(ItemStack armor, DefenseType type, double amount) {
+    public static void setDefense(ItemStack armor, DefenseType type, double amount) {
         NamespacedKey key = getKeyFor(type);
         ItemMeta meta = armor.getItemMeta();
         assert meta != null;
