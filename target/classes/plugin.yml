@@ -1,0 +1,4 @@
+name: NMLDefenses
+version: '1.0'
+main: io.github.NoOne.nMLDefenses.NMLDefenses
+api-version: '1.21'

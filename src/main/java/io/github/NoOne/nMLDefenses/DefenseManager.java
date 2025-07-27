@@ -21,6 +21,7 @@ public class DefenseManager {
     public void setDefense(ItemStack armor, DefenseType type, double amount) {
         NamespacedKey key = getKeyFor(type);
         ItemMeta meta = armor.getItemMeta();
+        assert meta != null;
         PersistentDataContainer armorContainer = meta.getPersistentDataContainer();
 
         armorContainer.set(key, PersistentDataType.DOUBLE, amount);
