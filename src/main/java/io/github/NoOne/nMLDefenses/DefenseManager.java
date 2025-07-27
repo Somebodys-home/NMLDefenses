@@ -14,12 +14,12 @@ public class DefenseManager {
         plugin = NMLDefenses.getInstance();
     }
 
-    private static NamespacedKey getKeyFor(DefenseType type) {
-        return new NamespacedKey(plugin, DefenseType.getDefenseString(type));
+    private static NamespacedKey makeKeyFor(DefenseType type) {
+        return new NamespacedKey(plugin, DefenseType.getDefenseString(type).replaceAll(" ", ""));
     }
 
     public static void setDefense(ItemStack armor, DefenseType type, double amount) {
-        NamespacedKey key = getKeyFor(type);
+        NamespacedKey key = makeKeyFor(type);
         ItemMeta meta = armor.getItemMeta();
         assert meta != null;
         PersistentDataContainer armorContainer = meta.getPersistentDataContainer();
@@ -29,7 +29,7 @@ public class DefenseManager {
     }
 
     public double getDefenseValue(ItemStack armor, DefenseType type) {
-        NamespacedKey key = getKeyFor(type);
+        NamespacedKey key = makeKeyFor(type);
         ItemMeta meta = armor.getItemMeta();
         PersistentDataContainer armorContainer = meta.getPersistentDataContainer();
 
@@ -40,7 +40,7 @@ public class DefenseManager {
     }
 
     public boolean hasDefenseType(ItemStack armor, DefenseType type) {
-        NamespacedKey key = getKeyFor(type);
+        NamespacedKey key = makeKeyFor(type);
         ItemMeta meta = armor.getItemMeta();
         PersistentDataContainer armorContainer = meta.getPersistentDataContainer();
 
