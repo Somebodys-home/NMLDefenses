@@ -6,6 +6,7 @@ public enum DefenseType {
     EVASION,
     DEFENSE,
     OVERHEALTH,
+    BLOCK,
     PHYSICALRESIST,
     FIRERESIST,
     COLDRESIST,
@@ -25,6 +26,9 @@ public enum DefenseType {
             }
             case OVERHEALTH -> {
                 return "Overhealth";
+            }
+            case BLOCK -> {
+                return "Block";
             }
             case PHYSICALRESIST -> {
                 return "Physical Resist";
@@ -61,6 +65,7 @@ public enum DefenseType {
             case EVASION, LIGHTRESIST -> color = ChatColor.WHITE;
             case DEFENSE -> color = ChatColor.GREEN;
             case OVERHEALTH -> color = ChatColor.DARK_BLUE;
+            case BLOCK -> color = ChatColor.WHITE;
             case PHYSICALRESIST -> color = ChatColor.DARK_RED;
             case FIRERESIST -> color = ChatColor.RED;
             case COLDRESIST -> color = ChatColor.AQUA;
