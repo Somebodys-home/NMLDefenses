@@ -40,6 +40,10 @@ public class DefenseManager {
     }
 
     public boolean hasDefenseType(ItemStack armor, DefenseType type) {
+        if (armor == null) {
+            return false;
+        }
+
         NamespacedKey key = makeKeyFor(type);
         ItemMeta meta = armor.getItemMeta();
         PersistentDataContainer armorContainer = meta.getPersistentDataContainer();
